@@ -605,3 +605,4 @@ function clearNonEssentialCookies() {
     // In a real application, you'd list all non-essential cookies here.
     document.cookie = 'selectedState=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     console.log('Non-essential cookies cleared.');
+}
