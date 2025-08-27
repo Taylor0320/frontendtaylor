@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #764ba2;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 25px;
+    margin: 0 0.2rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.page-container {
+    min-height: calc(100vh - 80px);
+    padding: 2rem 0;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.5);
+}
+
+.food-card {
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px 0 rgba(31, 38, 135, 0.6);
+}
+
+.food-card .card-body {
+    transition: all 0.3s ease;
+}
+
+.food-card:hover .card-body {
+    background: rgba(118, 75, 162, 0.1);
+}
+
+.food-card:active {
+    transform: translateY(-4px);
+    transition: transform 0.1s ease;
+}
+
+.food-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.food-detail-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.food-detail-name {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.food-info-section {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    border-left: 4px solid #764ba2;
+}
+
+.food-info-section:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.2);
+}
+
+.food-info-section h3 {
+    color: #764ba2;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.food-info-section h3 i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.back-button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(118, 75, 162, 0.4);
+    color: white;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(118, 75, 162, 0.4);
+}
+
+.states-nav {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.state-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    margin: 0.2rem;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.state-btn:hover, .state-btn.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: #764ba2;
+    transform: translateY(-2px);
+}
+
+.form-control {
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 1rem;
+}
+
+.login-card, .signup-card {
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+#map {
+    height: 400px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+    display: none;
+}
+
+.available-states {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.available-states h4 {
+    color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.state-tag {
+    background: rgba(255, 255, 255, 0.8);
+    color: #764ba2;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    margin: 0.2rem;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.click-indicator {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.click-indicator:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #212529; /* Dark background color */
+    color: #e9ecef; /* Light text color */
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem; /* Space between links */
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+    justify-content: center;
+}
+
+.footer-links li a {
+    color: #ced4da; /* Lighter color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #ffffff; /* White on hover */
+}
+
+@media (max-width: 768px) {
+    .logo { font-size: 1.4rem; }
+    .navbar-nav .nav-link { padding: 0.5rem 1rem !important; }
+    .page-container { padding: 1rem 0; }
+    .food-detail-image { height: 250px; }
+    .footer-links { gap: 1rem; }
+}
+
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(33, 37, 41, 0.95); /* Darker, slightly transparent background */
+    color: #e9ecef;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(100%); /* Start off-screen */
+    transition: transform 0.5s ease-out;
+}
+
+.cookie-consent-banner.show {
+    transform: translateY(0); /* Slide in */
+}
+
+.cookie-consent-banner p {
+    margin-bottom: 15px; /* Space between text and buttons */
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.cookie-consent-buttons .btn {
+    margin: 0 8px; /* Space between buttons */
+    min-width: 100px; /* Ensure buttons have minimum width */
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cookie-consent-buttons .btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    color: white;
+}
+
+.cookie-consent-buttons .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+}
+
+.cookie-consent-buttons .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: white;
+}
+
+.cookie-consent-buttons .btn-secondary:hover {
+    transform: translateY(-2px);
+    background-color: #5a6268;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+}
+
+@media (min-width: 769px) {
+    .cookie-consent-banner {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 50px;
+    }
+
+    .cookie-consent-banner p {
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+}

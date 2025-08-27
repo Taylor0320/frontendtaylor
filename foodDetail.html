@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Details - Malaysian Street Food Explorer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg header">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">
+                <i class="fas fa-utensils me-2"></i>Malaysian Street Food
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="food.html">Food</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="map.html">Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Food Detail Page -->
+    <div class="page-container">
+        <div class="container">
+            <a href="food.html" class="back-button">
+                <i class="fas fa-arrow-left me-2"></i>Back to Food Gallery
+            </a>
+
+            <div class="row">
+                <!-- Food Image -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card p-3">
+                        <img id="foodDetailImage" src="" alt="Food Image" class="food-detail-image">
+                    </div>
+                </div>
+                
+                <!-- Food Information -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card p-4">
+                        <h2 id="foodDetailName" class="mb-3 food-detail-name">Food Name</h2>
+                        <p id="foodDetailDescription" class="mb-4">Food description will appear here.</p>
+                        
+                        <!-- History Section -->
+                        <div class="food-info-section">
+                            <h3><i class="fas fa-history me-2"></i>History</h3>
+                            <p id="foodHistory">This traditional Malaysian dish has a rich cultural heritage that spans generations, representing the diverse culinary influences that make Malaysian cuisine unique.</p>
+                        </div>
+                        
+                        <!-- Main Ingredient Section -->
+                        <div class="food-info-section">
+                            <h3><i class="fas fa-leaf me-2"></i>Main Ingredients</h3>
+                            <p id="foodIngredients">The key ingredients combine traditional spices and fresh local produce to create authentic flavors that define this classic Malaysian street food.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Available States Section -->
+            <div class="available-states">
+                <h4><i class="fas fa-map-marker-alt me-2"></i>Available in States:</h4>
+                <div id="availableStates" class="text-center">
+                    <!-- States will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+
+    <div id="cookieConsentBanner" class="cookie-consent-banner">
+        <p>
+            This website uses cookies to ensure you get the best experience.
+            By clicking "Accept", you agree to our use of cookies.
+        </p>
+        <div class="cookie-consent-buttons">
+            <button id="acceptCookies" class="btn btn-primary">Accept</button>
+            <button id="declineCookies" class="btn btn-secondary">Decline</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy & Policy</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <p>&copy; 2023 Malaysian Street Food. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
