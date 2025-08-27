@@ -547,6 +547,40 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    const feedbackForm = document.getElementById('feedbackForm');
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const feedback = {};
+            for (let [key, value] of formData.entries()) {
+                feedback[key] = value;
+            }
+            let feedbacks = JSON.parse(localStorage.getItem('feedbacks') || '[]');
+            feedbacks.push(feedback);
+            localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+            alert('Thank you for your feedback!');
+            this.reset(); // Clear the form
+        });
+    }
+
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const contactMessage = {};
+            for (let [key, value] of formData.entries()) {
+                contactMessage[key] = value;
+            }
+            let contactMessages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+            contactMessages.push(contactMessage);
+            localStorage.setItem('contactMessages', JSON.stringify(contactMessages));
+            alert('Your message has been sent. We will get back to you soon!');
+            this.reset(); // Clear the form
+        });
+    }
     loadSocialFeed();
     fetchFoodData();
 
