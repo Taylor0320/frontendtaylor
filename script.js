@@ -411,6 +411,14 @@ const streetFoods = [
 let users = JSON.parse(localStorage.getItem('users') || '[]');
 let currentUser = sessionStorage.getItem('currentUser');
 
+function getCookieConsent() {
+    return localStorage.getItem('cookieConsent');
+}
+
+function setCookieConsent(status) {
+    localStorage.setItem('cookieConsent', status);
+}
+
 function setCookie(name, value, days) {
     if (getCookieConsent() === 'accepted') {
         const expires = new Date(Date.now() + days * 864e5).toUTCString();
@@ -631,7 +639,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 users.push({name, password});
                 localStorage.setItem('users', JSON.stringify(users));
                 alert('Registration successful!');
-                window.location.href = 'login.html';
+                window.location.href = 'index.html'; // Redirect to index.html
             });
         }
     }
@@ -676,14 +684,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const cookieConsentBanner = document.getElementById('cookieConsentBanner');
     const acceptCookiesBtn = document.getElementById('acceptCookies');
     const declineCookiesBtn = document.getElementById('declineCookies');
-
-    function getCookieConsent() {
-        return localStorage.getItem('cookieConsent');
-    }
-
-    function setCookieConsent(status) {
-        localStorage.setItem('cookieConsent', status);
-    }
 
     function showCookieConsentBanner() {
         if (cookieConsentBanner) {
