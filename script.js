@@ -603,7 +603,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         setCookie('loggedIn', 'true', 1);
                     }
                     alert('Login successful!');
-                    window.location.href = 'index.html';
+                    window.location.href = 'index.html'; // Redirect to index.html
                 } else {
                     alert('Invalid credentials!');
                 }
