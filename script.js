@@ -577,7 +577,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if a cookie consent choice has been made
     if (!getCookieConsent()) {
-        setCookieConsent('accepted'); // Automatically accept cookies
+        showCookieConsentBanner();
     }
 
     if (acceptCookiesBtn) {
