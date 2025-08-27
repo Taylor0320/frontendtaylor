@@ -443,23 +443,39 @@ function filterByState(state) {
 function initMap() {
     const mapDiv = document.getElementById('map');
     if (!mapDiv) return;
-    mapDiv.innerHTML = `
-        <div class="d-flex align-items-center justify-content-center h-100 bg-light rounded">
-            <div class="text-center">
-                <i class="fas fa-map-marked-alt fa-3x text-primary mb-3"></i>
-                <h5>Interactive Map</h5>
-                <p class="text-muted">Street food locations across Malaysia</p>
-                <div class="row mt-4">
-                    <div class="col-6 text-center">
-                        <i class="fas fa-map-marker-alt text-danger"></i> Kuala Lumpur
-                    </div>
-                    <div class="col-6 text-center">
-                        <i class="fas fa-map-marker-alt text-success"></i> Penang
-                    </div>
+
+    // Initialize the map if Leaflet is available
+    if (typeof L !== 'undefined') {
+        const map = L.map('map').setView([4.2105, 109.2132], 6); // Centered on Malaysia
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Example markers (you can expand this with your food data)
+        L.marker([3.1390, 101.6869]).addTo(map)
+            .bindPopup('Kuala Lumpur Food Spot');
+
+        L.marker([5.4140, 100.3288]).addTo(map)
+            .bindPopup('Penang Street Food');
+
+        L.marker([1.4927, 103.7414]).addTo(map)
+            .bindPopup('Johor Bahru Delights');
+
+        // Set a minimum height for the map container if not already set by CSS
+        mapDiv.style.minHeight = '500px';
+    } else {
+        // Fallback for when Leaflet is not loaded (e.g., in development before deployment)
+        mapDiv.innerHTML = `
+            <div class="d-flex align-items-center justify-content-center h-100 bg-light rounded" style="min-height: 500px;">
+                <div class="text-center">
+                    <i class="fas fa-map-marked-alt fa-3x text-primary mb-3"></i>
+                    <h5>Interactive Map</h5>
+                    <p class="text-muted">Map functionality loading...</p>
                 </div>
             </div>
-        </div>
-    `;
+        `;
+    }
 }
 
 function loadSocialFeed() {
