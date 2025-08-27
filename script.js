@@ -575,8 +575,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Check if a cookie consent choice has been made
     if (!getCookieConsent()) {
-        showCookieConsentBanner();
+        setCookieConsent('accepted'); // Automatically accept cookies
     }
 
     if (acceptCookiesBtn) {
